@@ -128,7 +128,7 @@ int	main(void)
 		}
 		else
 		{
-			printf("Invalid choice! Please try again.\n");
+			printf("Invalid choice!\n");
 		}
 		choice = welcome();
 	}
