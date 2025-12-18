@@ -16,13 +16,19 @@ int	welcome(void)
 	return (choice);
 }
 
-
-void shadow_binding(char *x, int index)
+void shadow_binding(char *x, int printing)
 {
-	if(x[index] == '(') //thinking
-		return(printf("%c",x[index]),shadow_binding(x,index + 1));
-	else if(x[index])
-	x[index] == '\0';
+	if (*x == '\0')
+		return;
+	if (*x == '(')
+		printing = 1;
+	if (printing)
+	{
+		printf("%c", *x);
+		if (*x == ')')
+			return;
+	}
+	shadow_binding(x + 1, printing);
 }
 
 
@@ -35,6 +41,7 @@ int	find_exit(int map[4][4], int x, int y, int size)
 	if (map[y][x] == 9)
 		return (1);
 	map[y][x] = 2;
+	// ı fixed that while we were in the class that we cant figure it out bayram hocam.
 	if (find_exit(map, x + 1, y, size))
 		return (1);
 	if (find_exit(map, x - 1, y, size))
@@ -59,15 +66,32 @@ int	main(void)
 
 	char secret1[] = "-*xyz(magic)123*-";
 	char secret2[] = "empty()space";
-	
-	
+	int choice;
 
-	if (find_exit(ok_maze, 0, 0, 4))
-		printf("There is a path!\n");
-	else
-		printf("No path!\n");
-	if (find_exit(not_ok_maze, 0, 0, 4))
-		printf("There is a path!\n");
-	else
-		printf("No path!\n");
+	choice = welcome();
+	while (choice != 3)
+	{
+		if (choice == 1)
+		{
+			if (find_exit(ok_maze, 0, 0, 4))
+				printf("There is a path!\n");
+			else
+				printf("No path!\n");
+			if (find_exit(not_ok_maze, 0, 0, 4))
+				printf("There is a path!\n");
+			else
+				printf("No path!\n");
+		}
+		else if (choice == 2)
+		{
+			shadow_binding(secret1, 0);
+			printf("\n");
+			shadow_binding(secret2, 0);
+			printf("\n");
+		}
+		else
+			printf("Invalid choice!\n");
+		choice = welcome();
+	}
+	printf("Goodbye!\n");
 }
