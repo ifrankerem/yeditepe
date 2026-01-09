@@ -4,32 +4,21 @@
 
 char *first(char *s1,char *s2)
 {
+	char  *word_end = s1;
+	int len = 0;
+ 	while (*word_end && *word_end != ' ')
+        word_end++;
+	char *p_2 = s2;
 	while(*s2)
 	{
-		char *s_1 = s1;
-		int flag = 0;
-		if(*s_1 == *s2)
-		{	
-			flag = 1;
-			while(*s_1 != ' ')
-			{
-				if(*s_1 == '\0')
-					break;
-				if(*s_1 != *s2)
-					{
-						flag = 0;
-						break;
-					}
-				s_1++;
-				s2++;
-			}
-			if(flag == 1)
-			{
-				if(*s2 == ' ' || *s2 == '\0')
-					return s2;
-			}
+		while(*s_1 != *s2)
+		{
+			len++;
+			s_1++;
+			s2++;
 		}
-		s2++;
+		if(word_count == len && (*(s2 + 1) == ' ' || *(s2 + 1) == '\0'))
+			return s2;
 	}
 	return NULL;
 }
