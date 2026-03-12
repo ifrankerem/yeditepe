@@ -25,7 +25,7 @@ public class InventoryTest {
 				System.out.print("Enter item name: ");
 				String itemName = input.nextLine();
 				System.out.print("Enter item price: $");
-				Double itemPrice = input.nextDouble();
+				double itemPrice = input.nextDouble();
 				System.out.print("Enter item quantity: ");
 				int itemQuantity = input.nextInt();
 				input.nextLine(); // newline kalıyor buffer temizlemek için
