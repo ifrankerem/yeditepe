@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class InventoryTest {
 
-	public static void menu()
+	public static void menu() //statik cünkü mainde obje olusturmadan bu sekilde kullanmak istedim.
 	{
 		Inventory inv = new Inventory();
 		Scanner input = new Scanner(System.in);

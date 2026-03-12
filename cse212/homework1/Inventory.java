@@ -2,12 +2,12 @@ package homework1;
 
 public class Inventory {
 
-	String[] itemName = new String[5];
-	double[] itemPrice = new double[5];
-	int[] itemQuantity = new int[5];
-	int item_count = 0;
+	private String[] itemName = new String[5]; //oop için best practice de private olmalı bunlar inventoryinin özel variabllearı bunları getter setterlar ile düzenlemeliyiz.
+	private double[] itemPrice = new double[5];
+	private int[] itemQuantity = new int[5];
+	private int item_count = 0;
 
-	void addItem(String itemName, double itemPrice, int itemQuantity)
+	public void addItem(String itemName, double itemPrice, int itemQuantity)
 	{
 		if(item_count == 5)
 		{
@@ -21,7 +21,7 @@ public class Inventory {
 		System.out.println("Item added successfully.");
 	}
 
-	void displayAllItems()
+	public void displayAllItems()
 	{
 		int i = 0;
 		System.out.println("Inventory Items:");
@@ -31,11 +31,11 @@ public class Inventory {
 			i++;
 		}
 	}
-	int getTotalNumberOfItems()
+	public int getTotalNumberOfItems()
 	{
 		return(item_count);
 	}
-	void calculateTotalWorth()
+	public void calculateTotalWorth()
 	{
 		int i = 0;
 		double total = 0;
