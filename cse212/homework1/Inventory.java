@@ -35,6 +35,18 @@ public class Inventory {
 	{
 		return(item_count);
 	}
+	public String [] getItemName()
+	{
+		return(itemName);
+	}
+	public int [] getQuantity()
+	{
+		return(itemQuantity);
+	}
+	public double [] getPrice()
+	{
+		return(itemPrice);
+	}
 	public void calculateTotalWorth()
 	{
 		int i = 0;
