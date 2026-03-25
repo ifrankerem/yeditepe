@@ -67,7 +67,7 @@ public class Menu{
 					int quantity = input.nextInt();
 					input.nextLine();
 					int newId = Order.getNextOrderId();
-					// in every attempt ++ the order id.
+					// in every order attempt ++ the order id.
 					if(Order.checkStorage(name,quantity,inv))
 					{
 						currentOrd = new Order(inv,name,quantity,newId);

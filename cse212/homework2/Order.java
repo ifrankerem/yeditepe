@@ -39,7 +39,7 @@ public class Order {
 		{
 			if((inv.getItemName()[i]).equals(name))
 			{
-				// i writed getter for this time ıtemn_name and quantity in the inventory ı didnt do it before because ı didnt need it on hw1.
+				// i writed getter for ıtem_name and quantity in the inventory.java ı didnt do it before because ı didnt need it on hw1.
 				if(inv.getQuantity()[i] >= q)
 					return(true);
 				else
@@ -58,7 +58,7 @@ public class Order {
 		for(int i = 0; i < this.inventory.getTotalNumberOfItems(); i++)
 		{
 			if((this.inventory.getItemName()[i]).equals(this.itemName))
-				cost = this.quantity * inventory.getPrice()[i];
+				cost = this.quantity * this.inventory.getPrice()[i];
 		}
 		System.out.println("Order cost for " + this.quantity + " " + this.itemName + " is: $" + cost);
 	}
