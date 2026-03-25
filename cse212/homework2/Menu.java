@@ -17,13 +17,13 @@ public class Menu{
 		while(op != Option.EXIT)
 		{
 			System.out.println("INVENTORY MENU:");
-            System.out.println("1. Add a new item");
-            System.out.println("2. Display all items");
-            System.out.println("3. Display total number of items");
-            System.out.println("4. Calculate total worth of inventory");
+            System.out.println("1. Add a New Item");
+            System.out.println("2. Display all Items");
+            System.out.println("3. Display the Total Number of Items");
+            System.out.println("4. Calculate the Total Worth of the Inventory");
 			System.out.println("CUSTOMER MENU:");
-            System.out.println("5. Add an order");
-            System.out.println("6. Calculate order cost");
+            System.out.println("5. Add an Order");
+            System.out.println("6. Calculate Order Cost");
             System.out.println("7. Exit");
             System.out.print("Enter your choice: ");
 

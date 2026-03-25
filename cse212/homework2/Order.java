@@ -28,7 +28,7 @@ public class Order {
 	public void displayOrderInfo()
 	{
 		System.out.println("Order ID: " + this.orderID);
-		System.out.println("Item name : " + this.itemName);
+		System.out.println("Item Name: " + this.itemName);
 		System.out.println("Quantity: " + this.quantity);
 	}
 
