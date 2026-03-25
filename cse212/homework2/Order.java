@@ -8,13 +8,18 @@ public class Order {
 	private Inventory inventory;
 	private String itemName;
 	private int quantity;
-	private static int ıd_counter = 1; // its static because all orders must share same id counter so orderID can ++
+	private static int id_counter = 0; // its static because all orders must share same id counter so orderID can ++ even fail attempts
 
 
-	Order (Inventory inv,  String itemName, int quantity)
+	public static int getNextOrderId()
 	{
-		this.orderID = ıd_counter;
-		ıd_counter++;
+		id_counter++;
+		return (id_counter);
+	}
+
+	public Order (Inventory inv,  String itemName, int quantity, int id)
+	{
+		this.orderID = id;
 		this.inventory = inv;
 		this.itemName = itemName;
 		this.quantity = quantity;
@@ -27,7 +32,7 @@ public class Order {
 		System.out.println("Quantity: " + this.quantity);
 	}
 
-	//ı did it static because in the menu there will be only one inv
+	//ı did it static because before creating order ı wanted to check storage
 	public static boolean checkStorage(String name, int q, Inventory inv)
 	{
 		for(int i = 0; i < inv.getTotalNumberOfItems(); i++)
@@ -35,11 +40,11 @@ public class Order {
 			if((inv.getItemName()[i]).equals(name))
 			{
 				// i writed getter for this time ıtemn_name and quantity in the inventory ı didnt do it before because ı didnt need it on hw1.
-				if(inv.getQuantity()[i] == q)
+				if(inv.getQuantity()[i] >= q)
 					return(true);
 				else
 				{
-					System.out.println("Not have enough of this product in stock!");
+					System.out.println("Item not found in inventory. Order cannot be placed.");
 					return(false);
 				}
 			}
@@ -47,15 +52,15 @@ public class Order {
 		System.out.println("There is no item called " + name);
 		return(false);
 	}
-	public void calculateOrderCost(Inventory inv)
+	public void calculateOrderCost()
 	{
 		double cost = 0;
-		for(int i = 0; i < inv.getTotalNumberOfItems(); i++)
+		for(int i = 0; i < this.inventory.getTotalNumberOfItems(); i++)
 		{
-			if((inv.getItemName()[i]).equals(this.itemName))
-				cost = this.quantity * inv.getPrice()[i];
+			if((this.inventory.getItemName()[i]).equals(this.itemName))
+				cost = this.quantity * inventory.getPrice()[i];
 		}
-		System.out.println("Order cost for " + this.quantity + " " + this.itemName + " is: $ " + cost);
+		System.out.println("Order cost for " + this.quantity + " " + this.itemName + " is: $" + cost);
 	}
 
 
