@@ -38,7 +38,7 @@ public class Order {
 
 	public double calculateOrderCost()
 	{
-		double cost = item.getItemPrice() * quantity + item.calculateShippingFee();
+		double cost = (item.getItemPrice() + item.calculateShippingFee()) * quantity;
 		return cost;
 	}
 

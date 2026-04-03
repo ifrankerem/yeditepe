@@ -9,7 +9,7 @@ public class Item {
 	private String type;
 
 
-	Item (String itemName, double itemPrice,int itemQuantity, Provider provider, String type)
+	public Item (String itemName, double itemPrice,int itemQuantity, Provider provider, String type)
 	{
 		this.itemName = itemName;
 		this.itemPrice = itemPrice;

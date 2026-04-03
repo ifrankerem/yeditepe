@@ -7,7 +7,7 @@ public class Inventory {
 	private ArrayList<Item> items;
 	private ArrayList<Order> orders;
 
-	Inventory()
+	public Inventory()
 	{
 		this.items = new ArrayList<Item>();
 		this.orders = new ArrayList<Order>();
@@ -40,14 +40,14 @@ public class Inventory {
 
 	public boolean check_and_add(String name, int q)
 	{
-		for(Item currenItem : items)
+		for(Item currentItem : items)
 		{
-			if(currenItem.getItemName().equals(name))
+			if(currentItem.getItemName().equals(name))
 			{
-				if(currenItem.getItemQuantity() >= q)
+				if(currentItem.getItemQuantity() >= q)
 				{
-					addOrder(currenItem, q);
-					currenItem.updateQuantity(q);
+					addOrder(currentItem, q);
+					currentItem.updateQuantity(q);
 					System.out.println("Order has been placed successfully.");
 					return(true);
 				}

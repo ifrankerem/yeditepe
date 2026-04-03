@@ -62,11 +62,11 @@ public class Menu{
 					if(type.equals("Physical"))
 					{
 						System.out.print("Enter width: ");
-						int width = input.nextInt();
+						double width = input.nextDouble();
 						System.out.print("Enter length: ");
-						int length = input.nextInt();
+						double length = input.nextDouble();
 						System.out.print("Enter height: ");
-						int height = input.nextInt();
+						double height = input.nextDouble();
 						input.nextLine();
 						PhysicalItem item = new PhysicalItem(name, price, quantity, provider, width, length, height);
 						inv.addItem(item);
@@ -75,7 +75,7 @@ public class Menu{
 					else if(type.equals("Digital"))
 					{
 						System.out.print("Enter disk space: ");
-						int diskSpace = input.nextInt();
+						double diskSpace = input.nextDouble();
 						input.nextLine();
 						DigitalItem item = new DigitalItem(name, price, quantity, provider, diskSpace);
 						inv.addItem(item);

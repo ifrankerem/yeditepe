@@ -7,7 +7,7 @@ public class PhysicalItem extends Item{
 	private double height;
 
 
-	PhysicalItem(String itemName, double itemPrice, int itemQuantity,Provider provider, double width, double length, double height)
+	public PhysicalItem(String itemName, double itemPrice, int itemQuantity,Provider provider, double width, double length, double height)
 	{
 		super(itemName,itemPrice,itemQuantity,provider,"Physical");
 		this.width = width;
@@ -29,7 +29,7 @@ public class PhysicalItem extends Item{
 			fee *= 0.5;
 		else if(weight > 2 && weight <= 3)
 			fee *= 0.35;
-		else if(weight > 1 && weight < 2)
+		else if(weight > 1 && weight <= 2)
 			fee *= 0.25;
 		else
 			fee = 0;

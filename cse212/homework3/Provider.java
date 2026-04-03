@@ -7,7 +7,7 @@ public class Provider
 	private int areaCode;
 	private int phoneNumber;
 
-	Provider(String name, int countryCode , int areaCode , int phoneNumber)
+	public Provider(String name, int countryCode , int areaCode , int phoneNumber)
 	{
 		this.name = name;
 		this.countryCode = countryCode;
