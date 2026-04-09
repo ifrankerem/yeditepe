@@ -65,7 +65,7 @@ public class Inventory {
 
 	public void addOrder(Item item, int q)
 	{	
-		Order order = new Order(item, item.getType());
+		Order order = new Order(item);
 		order.setQuantity(q);
 		order.setOrderPrice(item.getItemPrice());
 		orders.add(order);
@@ -86,7 +86,9 @@ public class Inventory {
 		while(it.hasNext())
 		{
 			Item currentItem = it.next();
-			if(currentItem.getType().equals(type))
+			if(type.equals("Digital") &&  currentItem instanceof DigitalItem)
+				currentItem.setItemPrice(currentItem.getItemPrice() + (currentItem.getItemPrice() * (percentage/100)));
+			else if(type.equals("Physical") && currentItem instanceof PhysicalItem)
 				currentItem.setItemPrice(currentItem.getItemPrice() + (currentItem.getItemPrice() * (percentage/100)));
 		}
 	}

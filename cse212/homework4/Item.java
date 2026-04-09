@@ -1,21 +1,19 @@
 package homework4;
 
-public class Item {
+public abstract class Item {
 
 	private String itemName;
 	private double itemPrice;
 	private int itemQuantity;
 	private Provider provider;
-	private String type;
 
 
-	public Item (String itemName, double itemPrice,int itemQuantity, Provider provider, String type)
+	public Item (String itemName, double itemPrice,int itemQuantity, Provider provider)
 	{
 		this.itemName = itemName;
 		this.itemPrice = itemPrice;
 		this.itemQuantity = itemQuantity;
 		this.provider = provider;
-		this.type = type;
 	}
 
 	public void updateQuantity(int purchasedQuantity)
@@ -23,15 +21,10 @@ public class Item {
 		this.itemQuantity -= purchasedQuantity;
 	}
 
-	public double calculateVolumetricWeight() 
-	{
-		return 0;
-	}
+	public abstract double calculateVolumetricWeight();
 
-	public double calculateShippingFee()
-	{
-		return (0);
-	}
+	public abstract double calculateShippingFee();
+
 
 	public double calculateTotalWorth()
 	{
@@ -57,9 +50,6 @@ public class Item {
 	}
 	public String getItemName() {
 		return itemName;
-	}
-	public String getType() {
-		return type;
 	}
 	
 	public void setItemPrice(double itemPrice) {

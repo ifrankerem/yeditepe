@@ -7,7 +7,7 @@ public class DigitalItem extends Item{
 
 	public DigitalItem(String itemName, double itemPrice, int itemQuantity ,Provider provider, double diskSpace)
 	{
-		super(itemName,itemPrice,itemQuantity,provider,"Digital");
+		super(itemName,itemPrice,itemQuantity,provider);
 		this.diskSpace = diskSpace;
 	}
 

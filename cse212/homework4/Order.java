@@ -3,14 +3,12 @@ package homework4;
 public class Order {
 
 	private Item item;
-	private String type;
 	private int quantity;
 	private double orderPrice; // i declared this because "if a product was ordered before the price raise, its price should be kept as is"
 
-	public Order(Item item, String type)
+	public Order(Item item)
 	{
 		this.item = item;
-		this.type = type;
 	}
 
 	public Item getItem() {
@@ -19,14 +17,6 @@ public class Order {
 
 	public void setItem(Item item) {
 		this.item = item;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
 	}
 
 	public int getQuantity() {

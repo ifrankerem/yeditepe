@@ -9,7 +9,7 @@ public class PhysicalItem extends Item{
 
 	public PhysicalItem(String itemName, double itemPrice, int itemQuantity,Provider provider, double width, double length, double height)
 	{
-		super(itemName,itemPrice,itemQuantity,provider,"Physical");
+		super(itemName,itemPrice,itemQuantity,provider);
 		this.width = width;
 		this.length = length;
 		this.height = height;
