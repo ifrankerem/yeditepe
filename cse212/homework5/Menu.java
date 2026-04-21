@@ -43,7 +43,7 @@ public class Menu{
 					int serviceTypeChoice = input.nextInt();
 					input.nextLine();
 					if(serviceTypeChoice == 1) {
-						System.out.println("Item's Information: ");
+						System.out.println("Item's Information:");
 						System.out.print("Enter item name: ");
 						String name = input.nextLine();
 						System.out.print("Enter item price: $");
@@ -51,7 +51,7 @@ public class Menu{
 						System.out.print("Enter item quantity: ");
 						int quantity = input.nextInt();
 						input.nextLine();
-						System.out.println("Provider's Information: ");
+						System.out.println("Provider's Information:");
 						System.out.print("Enter provider name: ");
 						String p_name = input.nextLine();
 						System.out.print("Enter country code: ");

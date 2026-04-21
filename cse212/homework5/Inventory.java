@@ -107,22 +107,9 @@ public class Inventory {
 			order = new Streaming(stream.getTitle(), "", stream.getCostPerDay(), stream.getDays(), stream.getServiceType());
 		}
 		if (order != null) {
-			if (order instanceof Item) {
-				Item i = (Item) order;
-				i.setDestinationRegion(region);
-				i.setDestinationCity(city);
-				i.setDestinationPostCode(postCode);
-			} else if (order instanceof Streaming) {
-				Streaming s_cast = (Streaming) order;
-				s_cast.setDestinationRegion(region);
-				s_cast.setDestinationCity(city);
-				s_cast.setDestinationPostCode(postCode);
-			} else if (order instanceof FoodDelivery) {
-				FoodDelivery f_cast = (FoodDelivery) order;
-				f_cast.setDestinationRegion(region);
-				f_cast.setDestinationCity(city);
-				f_cast.setDestinationPostCode(postCode);
-			}
+			order.setDestinationRegion(region);
+			order.setDestinationCity(city);
+			order.setDestinationPostCode(postCode);
 			orders.add(order);
 		}
 	}
@@ -146,10 +133,7 @@ public class Inventory {
 		ListIterator<Service> it = orders.listIterator();
 		while(it.hasNext()) {
 			Service s = it.next();
-			String orderCity = null;
-			if (s instanceof Item) orderCity = ((Item) s).getDestinationCity();
-			else if (s instanceof Streaming) orderCity = ((Streaming) s).getDestinationCity();
-			else if (s instanceof FoodDelivery) orderCity = ((FoodDelivery) s).getDestinationCity();
+			String orderCity = s.getDestinationCity();
 
 			if(orderCity != null && orderCity.equals(city)) {
 				it.remove();
