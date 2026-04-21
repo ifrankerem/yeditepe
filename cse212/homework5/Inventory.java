@@ -119,9 +119,12 @@ public class Inventory {
 		for(Service order : orders)
 		{
 			String serviceName = "";
-			if(order instanceof Item) serviceName = ((Item)order).getItemName();
-			else if(order instanceof FoodDelivery) serviceName = ((FoodDelivery)order).getFoodName();
-			else if(order instanceof Streaming) serviceName = ((Streaming)order).getTitle();
+			if(order instanceof Item) 
+				serviceName = ((Item)order).getItemName();
+			else if(order instanceof FoodDelivery) 
+				serviceName = ((FoodDelivery)order).getFoodName();
+			else if(order instanceof Streaming) 
+				serviceName = ((Streaming)order).getTitle();
 
 			double cost = order.calculateService();
 			System.out.println("The total cost of " + serviceName + " order is: $" + cost);
