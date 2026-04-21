@@ -1,4 +1,4 @@
-public class PhysicalItem extends Item implements Service{
+public class PhysicalItem extends Item {
 	
 	private double width;
 	private double length;
@@ -16,6 +16,10 @@ public class PhysicalItem extends Item implements Service{
 	public double calculateVolumetricWeight()
 	{
 		return((this.length * this.width * this.height) / 5000);
+	}
+
+	public void updateQuantity(int purchasedQuantity) {
+		setItemQuantity(getItemQuantity() - purchasedQuantity);
 	}
 
 	public double calculateShippingFee()
@@ -37,7 +41,28 @@ public class PhysicalItem extends Item implements Service{
 	}
 
 	public String getServiceType() {
-		return "Pysical";
- // düzelt	}
+		return "Physical";
+	}
 
+	public double calculateTotalWorth() {
+		return getItemPrice() * getItemQuantity();
+	}
+
+	@Override
+	public void displayServiceInfo() {
+		super.displayServiceInfo();
+		System.out.println("Width: " + width + ", Length: " + length + ", Height: " + height);
+	}
+
+	public double getWidth() {
+		return width;
+	}
+
+	public double getLength() {
+		return length;
+	}
+
+	public double getHeight() {
+		return height;
+	}
 }

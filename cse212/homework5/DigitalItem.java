@@ -1,4 +1,4 @@
-public class DigitalItem extends Item implements Service{
+public class DigitalItem extends Item {
 
 	private double diskSpace;
 
@@ -21,5 +21,22 @@ public class DigitalItem extends Item implements Service{
 	{
 		return (0);
 	}
-	
+
+	public void updateQuantity(int purchasedQuantity) {
+		setItemQuantity(getItemQuantity() - purchasedQuantity);
+	}
+
+	public double calculateTotalWorth() {
+		return getItemPrice() * getItemQuantity();
+	}
+
+	@Override
+	public void displayServiceInfo() {
+		super.displayServiceInfo();
+		System.out.println("Disk Space: " + diskSpace);
+	}
+
+	public double getDiskSpace() {
+		return diskSpace;
+	}
 }
