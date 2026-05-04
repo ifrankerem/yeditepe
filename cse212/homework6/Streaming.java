@@ -1,5 +1,3 @@
-package homework5;
-
 public class Streaming implements Service {
 
 	private String title;
@@ -37,6 +35,11 @@ public class Streaming implements Service {
 		System.out.println("Category: " + this.category);
 		System.out.println("Cost Per Day: $" + this.costPerDay);
 		System.out.println("Rental Days: " + this.days);
+	}
+
+	public String toString()
+	{
+		return ("The total cost of " + this.title + " order is: $" + this.calculateService());
 	}
 
 	public double calculateShippingFee()

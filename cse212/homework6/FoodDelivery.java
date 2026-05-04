@@ -1,5 +1,3 @@
-package homework5;
-
 public class FoodDelivery implements Service {
 
 
@@ -23,12 +21,17 @@ public class FoodDelivery implements Service {
 		this.count = count;
 	}
 
+	public String toString()
+	{
+		return ("The total cost of " + this.foodName + " order is: $" + this.calculateService());
+	}
+
 	public String getServiceType() {
 		return type;
 	}
 
 	public double calculateService() {
-		return (mealPrice * count) + calculateShippingFee();
+		return ((mealPrice + calculateShippingFee() )* count);
 	}
 
 	public double calculateShippingFee() {

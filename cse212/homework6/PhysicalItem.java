@@ -1,5 +1,3 @@
-package homework5;
-
 public class PhysicalItem extends Item {
 	
 	private double width;

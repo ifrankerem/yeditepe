@@ -1,9 +1,8 @@
-package homework5;
-
 import java.util.ArrayList;
 import java.util.ListIterator;
+import java.util.Collections;
 
-public class Inventory {
+public class Inventory{
 
 	private ArrayList<Service> services;
 	private ArrayList<Service> orders;
@@ -115,7 +114,7 @@ public class Inventory {
 			orders.add(order);
 		}
 	}
-	
+
 	public void calculateOrderCost()
 	{
 		for(Service order : orders)
@@ -131,6 +130,13 @@ public class Inventory {
 			double cost = order.calculateService();
 			System.out.println("The total cost of " + serviceName + " order is: $" + cost);
 		}
+	}
+
+	public void DescendingOrderCost()
+	{
+		Collections.sort(orders);
+		for(Service order : orders)
+			System.out.println(order);
 	}
 
 	public void removeOrderForCity(String city) {

@@ -1,5 +1,3 @@
-package homework5;
-
 public class DigitalItem extends Item {
 
 	private double diskSpace;

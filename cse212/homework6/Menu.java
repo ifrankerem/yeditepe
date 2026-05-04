@@ -1,6 +1,5 @@
-package homework5;
-
 import java.util.Scanner;
+
 
 public class Menu{ 
 
@@ -22,7 +21,7 @@ public class Menu{
 			System.out.println("7. Remove Order for a Specific City");
 			System.out.println("CUSTOMER MENU:");
             System.out.println("8. Add an Order");
-            System.out.println("9. Calculate Order Cost");
+            System.out.println("9. Calculate Order Costs in a Descending Manner");
             System.out.println("10. Exit");
             System.out.print("Enter your choice: ");
 
@@ -173,13 +172,12 @@ public class Menu{
 					inv.check_and_add(name, quantity, region, city, postCode);
 					break;
 				}
-				case ORD_COST:
+				case CMPR_ORD_COST:
 				{
 					if(inv.getOrders().size() == 0)
 						System.out.println("There is no active order!");
 					else
-						inv.calculateOrderCost();
-				
+						inv.DescendingOrderCost();
 					break;
 				}
 				case EXIT:

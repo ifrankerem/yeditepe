@@ -1,5 +1,3 @@
-package homework5;
-
 enum Option{
 		ADD_SERVICE(1),
 		DISPLAY_SERVICES(2),
@@ -9,7 +7,7 @@ enum Option{
 		LIST_FEE_LIMIT(6),
 		REMOVE_ORD(7),
 		ADD_ORD(8),
-		ORD_COST(9),
+		CMPR_ORD_COST(9),
 		EXIT(10);
 
 	// ı created enums with constuctor for matching inputs

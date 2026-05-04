@@ -1,5 +1,3 @@
-package homework5;
-
 public abstract class Item implements Service {
 
 	private String itemName;
@@ -38,6 +36,11 @@ public abstract class Item implements Service {
 		System.out.println("Quantity: " + this.itemQuantity);
 		System.out.println("Provider: " + this.provider.getName());
 		System.out.println("Provider Contact: +" + this.provider.getCountryCode() + "(" + this.provider.getAreaCode() + ")" + this.provider.getPhoneNumber());
+	}
+
+	public String toString()
+	{
+		return ("The total cost of " + this.itemName + " order is: $" + this.calculateService());
 	}
 
 	public double getItemPrice() {

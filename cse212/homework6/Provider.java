@@ -1,5 +1,3 @@
-package homework5;
-
 public class Provider
 {
 	private String name;
