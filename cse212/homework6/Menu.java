@@ -18,7 +18,7 @@ public class Menu{
             System.out.println("4. Calculate the Total Worth of the Inventory");
 			System.out.println("5. Increase Price of Specific Type");
 			System.out.println("6. List Services with Shipping Fee Above a Limit");
-			System.out.println("7. Remove Order for a Specific City");
+			System.out.println("7. Remove Order For a Specific City");
 			System.out.println("CUSTOMER MENU:");
             System.out.println("8. Add an Order");
             System.out.println("9. Calculate Order Costs in a Descending Manner");
