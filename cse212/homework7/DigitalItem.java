@@ -30,7 +30,6 @@ public class DigitalItem extends Item {
 		return getItemPrice() * getItemQuantity();
 	}
 
-	@Override
 	public void displayServiceInfo() {
 		super.displayServiceInfo();
 		System.out.println("Disk Space: " + diskSpace);

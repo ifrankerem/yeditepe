@@ -48,7 +48,6 @@ public class PhysicalItem extends Item {
 		return getItemPrice() * getItemQuantity();
 	}
 
-	@Override
 	public void displayServiceInfo() {
 		super.displayServiceInfo();
 		System.out.println("Width: " + width + ", Length: " + length + ", Height: " + height);
