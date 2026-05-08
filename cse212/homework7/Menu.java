@@ -23,7 +23,7 @@ public class Menu{
 			System.out.println("7. Remove Order For a Specific City");
 			System.out.println("CUSTOMER MENU:");
             System.out.println("8. Add an Order");
-            System.out.println("9. Calculate Order Costs in a Descending Manner");
+            System.out.println("9. Calculate Order Cost");
             System.out.println("10. Exit");
             System.out.print("Enter your choice: ");
 
@@ -157,20 +157,32 @@ public class Menu{
 				}
 				case ADD_ORD:
 				{
-					System.out.print("Enter the item name you want to order: ");
-					String name = input.nextLine();
-					inv.ft_check(name,-1);
-					System.out.print("Enter the quantity: ");
-					int quantity = input.nextInt();
-					inv.ft_check(name,quantity);
-					input.nextLine();
-					System.out.print("Enter destination region: ");
-					String region = input.nextLine();
-					System.out.print("Enter destination city: ");
-					String city = input.nextLine();
-					System.out.print("Enter destination post code: ");
-					String postCode = input.nextLine();
-					inv.ft_add(name, quantity, region, city, postCode);
+					boolean orderPlaced = false;
+					while(!orderPlaced) //there is a while for asking again order name it doesnt go whole upper menu in the walkthrough
+					{
+						try
+						{
+							System.out.print("Enter the item name you want to order: ");
+							String name = input.nextLine();
+							inv.ft_check(name, -1);
+							System.out.print("Enter the quantity: ");
+							int quantity = input.nextInt();
+							input.nextLine();
+							inv.ft_check(name, quantity);
+							System.out.print("Enter destination region: ");
+							String region = input.nextLine();
+							System.out.print("Enter destination city: ");
+							String city = input.nextLine();
+							System.out.print("Enter destination post code: ");
+							String postCode = input.nextLine();
+							inv.ft_add(name, quantity, region, city, postCode);
+							orderPlaced = true;
+						}
+						catch(NoSuchItemException e)
+						{
+							System.err.println(e.getMessage());
+						}
+					}
 					break;
 				}
 				case CMPR_ORD_COST:
@@ -187,9 +199,12 @@ public class Menu{
 			}
 			System.out.println();
 		}
-		catch(Exception e)
+		catch(InvalidSelection | java.util.InputMismatchException e)
 		{
-			System.err.println(e.getMessage());
+			System.err.println("You entered an invalid menu option. Enter again.");
+			if (e instanceof java.util.InputMismatchException) { //if user enters non integer buffer need to be cleaned
+				input.nextLine();
+			}
 		}
 	}
 		input.close();
