@@ -137,17 +137,17 @@ public class gui extends JFrame{
 							double height = askDouble("Enter height: \n");
 							PhysicalItem item = new PhysicalItem(name, price, quantity, provider, width, length, height);
 							inv.addService(item);
-							JOptionPane.showMessageDialog(gui.this,"DONE!","Physical item added successfully.",JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(gui.this,"Physical item added successfully.","Success",JOptionPane.INFORMATION_MESSAGE);
 						}
 						else if(type.equals("Digital"))
 						{
 							double diskSpace = askDouble("Enter disk space: \n");
 							DigitalItem item = new DigitalItem(name, price, quantity, provider, diskSpace);
 							inv.addService(item);
-							JOptionPane.showMessageDialog(gui.this,"DONE!","Digital item added successfully.",JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(gui.this,"Digital item added successfully.","Success",JOptionPane.INFORMATION_MESSAGE);
 						}
 						else
-							JOptionPane.showMessageDialog(gui.this,"ERROR!","Wrong type!",JOptionPane.ERROR_MESSAGE);
+							JOptionPane.showMessageDialog(gui.this,"Wrong type!","Error",JOptionPane.ERROR_MESSAGE);
 					}
 					else if(nbr == 2)
 					{
@@ -157,7 +157,7 @@ public class gui extends JFrame{
 						int days = askInt("Enter days:\n");
 						Streaming stream = new Streaming(title, category, cost, days, "Streaming");
 						inv.addService(stream);
-						JOptionPane.showMessageDialog(gui.this,"DONE!","Streaming added successfully.",JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(gui.this,"Streaming added successfully.","Success",JOptionPane.INFORMATION_MESSAGE);
 					}
 					else if(nbr == 3)
 					{
@@ -167,7 +167,7 @@ public class gui extends JFrame{
 						int count = askInt("Enter food count:\n");
 						FoodDelivery food = new FoodDelivery(foodName, resName, mealPrice, "FoodDelivery", count);
 						inv.addService(food);
-						JOptionPane.showMessageDialog(gui.this,"DONE!","Food Delivery added successfully.",JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(gui.this,"Food Delivery added successfully.","Success",JOptionPane.INFORMATION_MESSAGE);
 					}
 				}
 				catch(IllegalArgumentException e)
@@ -187,7 +187,7 @@ public class gui extends JFrame{
 					String city = ask("Enter destination city:\n");
 					String postCode = ask("Enter destination post code:\n");
 					inv.ft_add(name, quantity, region, city, postCode);
-					JOptionPane.showMessageDialog(gui.this,"DONE!","Order added successfully.",JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(gui.this,"Order added successfully.","Success",JOptionPane.INFORMATION_MESSAGE);
 				}
 				catch(IllegalArgumentException e)
 				{
@@ -195,7 +195,7 @@ public class gui extends JFrame{
 				}
 				catch(NoSuchItemException e)
 				{
-					JOptionPane.showMessageDialog(gui.this,e.getMessage(),"Order Error!",JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(gui.this,e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
 				}
 			}
 			}
@@ -216,13 +216,13 @@ public class gui extends JFrame{
 				}
 				catch(NoSuchItemException e)
 				{
-					JOptionPane.showMessageDialog(gui.this,e.getMessage(),"Error!",JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(gui.this,e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
 				}
 			}
 			else if(source == d_orderButton)
 			{
 				if(inv.getOrders().size() == 0) {
-					JOptionPane.showMessageDialog(gui.this,"There is no active order!","Error!",JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(gui.this,"There is no active order!","Error",JOptionPane.ERROR_MESSAGE);
 				} else {
 					java.util.Collections.sort(inv.getOrders()); //in descending order
 					String result = "";
