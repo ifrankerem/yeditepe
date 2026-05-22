@@ -132,11 +132,11 @@ public class Inventory{
 		if(s instanceof PhysicalItem) 
 		{
 			PhysicalItem item = (PhysicalItem) s;
-			order = new PhysicalItem(item.getItemName(), item.getItemPrice(), q, null, item.getWidth(), item.getLength(), item.getHeight());
+			order = new PhysicalItem(item.getItemName(), item.getItemPrice(), q, item.getProvider(), item.getWidth(), item.getLength(), item.getHeight());
 		} else if(s instanceof DigitalItem) 
 		{
 			DigitalItem item = (DigitalItem) s;
-			order = new DigitalItem(item.getItemName(), item.getItemPrice(), q, null, item.getDiskSpace());
+			order = new DigitalItem(item.getItemName(), item.getItemPrice(), q, item.getProvider(), item.getDiskSpace());
 		} else if(s instanceof FoodDelivery) 
 		{
 			FoodDelivery food = (FoodDelivery) s;

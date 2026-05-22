@@ -35,8 +35,13 @@ public abstract class Item implements Service {
 		result += "Item : " + this.itemName + "\n";
 		result += "Price: $" + this.itemPrice + "\n";
 		result += "Quantity: " + this.itemQuantity + "\n";
-		result += "Provider: " + this.provider.getName() + "\n";
-		result += "Provider Contact: +" + this.provider.getCountryCode() + "(" + this.provider.getAreaCode() + ")" + this.provider.getPhoneNumber() + "\n";
+		if (this.provider != null) {
+			result += "Provider: " + this.provider.getName() + "\n";
+			result += "Provider Contact: +" + this.provider.getCountryCode() + "(" + this.provider.getAreaCode() + ")" + this.provider.getPhoneNumber() + "\n";
+		} else {
+			result += "Provider: Unknown\n";
+			result += "Provider Contact: Unknown\n";
+		}
 		return result;
 	}
 
@@ -48,6 +53,10 @@ public abstract class Item implements Service {
 	public String toString()
 	{
 		return ("The total cost of " + this.itemName + " order is: $" + this.calculateService());
+	}
+
+	public Provider getProvider() {
+		return provider;
 	}
 
 	public double getItemPrice() {
