@@ -31,6 +31,7 @@ public class gui extends JFrame{
 		ButtonHandler handler = new ButtonHandler();
 		ActionHandler handler2 = new ActionHandler();
 		textArea = new JTextArea(15,40);
+		textArea.setEditable(false); //user cant edit by hand its just a display area
 
 		//--------------------
 
