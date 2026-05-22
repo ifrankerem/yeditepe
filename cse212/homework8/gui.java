@@ -236,11 +236,12 @@ public class gui extends JFrame{
 			}
 			else if(source == d_feeButton)
 			{
-				try{
+			try
+			{
 				int nbr_lmt = askInt("Enter limit:");
 				String result = inv.get_text_fee_limit(nbr_lmt);
 				textArea.setText(result);
-			}
+			}	
 			catch(IllegalArgumentException e)
 			{
 				JOptionPane.showMessageDialog(gui.this,e.getMessage(),"Operation Cancelled!",JOptionPane.WARNING_MESSAGE);
