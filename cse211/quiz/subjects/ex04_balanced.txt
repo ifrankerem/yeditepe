@@ -1,0 +1,27 @@
+Assignment name  : ex04_balanced
+Expected file    : rendu/ex04_balanced.cpp
+Level            : 2
+--------------------------------------------------------------------------------
+
+Write a function that checks whether a string has balanced brackets.
+Three kinds count: ( ) [ ] { }. Ignore every other character.
+
+Prototype:
+
+    bool isBalanced(const std::string& s);
+
+- Balanced means: every closing bracket matches the LAST unmatched opening
+  bracket of the same kind, and nothing is left open at the end.
+- Use a stack you write yourself (you may copy your ex03 Stack, with char
+  items). <stack> and friends are forbidden.
+- Slides: chapter 6, "Checking for Balanced Braces". This is the same idea
+  with three kinds of brackets.
+
+Examples:
+
+    "([]{})"                -> true
+    "a(b[c]d)e"             -> true
+    ""                      -> true
+    "([)]"                  -> false   ( ] does not match the last open, [ )
+    "(("                    -> false   ( left open )
+    "))"                    -> false   ( nothing to close )

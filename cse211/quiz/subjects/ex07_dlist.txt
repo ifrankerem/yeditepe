@@ -1,0 +1,30 @@
+Assignment name  : ex07_dlist
+Expected file    : rendu/ex07_dlist.cpp
+Level            : 3
+--------------------------------------------------------------------------------
+
+The list is a CIRCULAR DOUBLY linked list with a DUMMY HEAD node (slides,
+chapter 4, figure 4.29). The grader creates the dummy head for you:
+
+    empty list:  head->next == head  and  head->prev == head
+    head->data is not a real item, never read it.
+
+Write two functions that keep the list sorted ascending:
+
+    void insertSortedD(DNode* head, int value);
+    int  removeAllD(DNode* head, int value);   // returns how many removed
+
+- #include "../include/node.h"   (DNode has data, prev, next)
+- insertSortedD puts value before the first node with a bigger value
+  (equal values: put it after the existing ones).
+- removeAllD removes and deletes every node holding value. Never remove the
+  dummy head.
+- Both prev and next must stay correct: the grader walks the list forward
+  AND backward, and checks n->next->prev == n for every node.
+- With a dummy head you should need NO special case for first or last node.
+
+Examples (forward order):
+
+    insert 30 20 40 10 20   -> [10 20 20 30 40]
+    removeAllD(20)          -> returns 2, list [10 30 40]
+    removeAllD(99)          -> returns 0

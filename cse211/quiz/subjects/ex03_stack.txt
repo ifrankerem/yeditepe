@@ -1,0 +1,36 @@
+Assignment name  : ex03_stack
+Expected file    : rendu/ex03_stack.cpp
+Level            : 1
+--------------------------------------------------------------------------------
+
+Write a pointer-based Stack class (a linked list, no arrays) with exactly this
+public interface:
+
+    class Stack {
+    public:
+        Stack();
+        Stack(const Stack& other);     // deep copy
+        ~Stack();                      // free every node
+        Stack& operator=(const Stack&) = delete;
+
+        bool isEmpty() const;
+        int  size() const;
+        void push(int value);
+        bool pop();                    // false if empty
+        bool pop(int& value);          // false if empty, value unchanged
+        bool getTop(int& value) const; // false if empty, value unchanged
+    private:
+        // your choice
+    };
+
+- No limit on size: 10000 pushes must work.
+- The copy must be independent: popping the original must not change the
+  copy, and the copy must keep the same order (top stays top).
+- No leaks: the destructor frees what is left.
+- <stack>, <vector>, <list>... are forbidden.
+
+Example:
+
+    push 1 2 3        -> getTop gives 3, size 3
+    Stack c(s); s.pop -> s top 2, c top 3
+    pop c until empty -> 3 2 1

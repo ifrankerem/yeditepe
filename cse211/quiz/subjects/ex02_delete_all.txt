@@ -1,0 +1,22 @@
+Assignment name  : ex02_delete_all
+Expected file    : rendu/ex02_delete_all.cpp
+Level            : 1
+--------------------------------------------------------------------------------
+
+Write a function that removes EVERY node holding value from a singly linked
+list and returns how many nodes it removed.
+
+Prototype:
+
+    int deleteAll(Node*& head, int value);
+
+- #include "../include/node.h"
+- Removed nodes must be freed with delete (the grader checks for leaks).
+- head may change (first nodes removed, or the list becomes empty).
+- Keep the order of the other nodes.
+
+Examples:
+
+    [1 2 1 3 1], value 1   -> returns 3, list becomes [2 3]
+    [5 5 5],     value 5   -> returns 3, list becomes []  (head == nullptr)
+    [1 2 3],     value 4   -> returns 0, list stays [1 2 3]

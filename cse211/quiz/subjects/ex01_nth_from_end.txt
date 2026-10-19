@@ -1,0 +1,26 @@
+Assignment name  : ex01_nth_from_end
+Expected file    : rendu/ex01_nth_from_end.cpp
+Level            : 0
+--------------------------------------------------------------------------------
+
+Write a function that returns the n-th node from the END of a singly linked list.
+n = 1 is the last node.
+
+Prototype:
+
+    Node* nthFromEnd(Node* head, int n);
+
+- #include "../include/node.h"
+- Return the original node (not a copy).
+- If n < 1, or the list has fewer than n nodes, return nullptr.
+- Do it in ONE pass, with two pointers (hint: lab2 q3, findMiddle).
+  Do not count the length first.
+
+Examples:
+
+    [10 20 30 40 50], n = 1   -> node 50
+    [10 20 30 40 50], n = 5   -> node 10
+    [10 20 30 40 50], n = 6   -> nullptr
+    [10 20 30 40], 
+    [10 20 30 40 50 60 70 80 90], 
+    [], n = 1                 -> nullptr

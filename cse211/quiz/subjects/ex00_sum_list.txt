@@ -1,0 +1,20 @@
+Assignment name  : ex00_sum_list
+Expected file    : rendu/ex00_sum_list.cpp
+Level            : 0
+--------------------------------------------------------------------------------
+
+Write a function that returns the sum of all values in a singly linked list.
+
+Prototype:
+
+    int sumList(Node* head);
+
+- Use the Node struct from include/node.h:  #include "../include/node.h"
+- An empty list (head == nullptr) has sum 0.
+- Do not change the list.
+
+Examples:
+
+    [1 2 3 4]   -> 10
+    [-3 7 -4]   -> 0
+    []          -> 0
