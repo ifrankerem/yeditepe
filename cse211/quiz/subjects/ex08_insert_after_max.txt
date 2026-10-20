@@ -1,0 +1,27 @@
+Assignment name  : ex08_insert_after_max
+Expected file    : rendu/ex08_insert_after_max.cpp
+Level            : 4 (lab exam, 20 Oct)
+--------------------------------------------------------------------------------
+
+The class LinkedList is given in include/linked_list.h. Start your file with:
+
+    #include "../include/linked_list.h"
+
+Write this member function:
+
+    void LinkedList::insertAfterMax(int value);
+
+It finds the node with the largest data and inserts a NEW node holding value
+right after it.
+
+- If the largest value appears more than once, use the LAST one.
+- Empty list: do nothing.
+- Walk the list once to find the max node, then insert. Only one new node.
+
+Examples:
+
+    [3 9 2 7],   value 5   -> [3 9 5 2 7]
+    [1 2 3],     value 0   -> [1 2 3 0]      (max is last)
+    [8 1 8],     value 4   -> [8 1 8 4]      (last max)
+    [5 1 5 2],   value 0   -> [5 1 5 0 2]    (last max)
+    [],          value 5   -> []

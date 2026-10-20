@@ -1,0 +1,30 @@
+Assignment name  : ex10_new_minimums
+Expected file    : rendu/ex10_new_minimums.cpp
+Level            : 4 (lab exam, 20 Oct)
+Allowed          : <vector> (only in this exercise)
+--------------------------------------------------------------------------------
+
+The class LinkedList is given in include/linked_list.h. Start your file with:
+
+    #include "../include/linked_list.h"
+
+Write this member function:
+
+    std::vector<int> LinkedList::newMinimums() const;
+
+Walk the list from the head. Put an element into the vector if EVERY element
+before it is bigger than it (it is smaller than all elements before it).
+The first element has nothing before it, so it is always added.
+
+- Strictly bigger: an element equal to an earlier one is NOT added.
+- Keep list order in the vector. Do not change the list.
+- Empty list: return an empty vector.
+- One pass is enough: you do not need to look back at every earlier element.
+
+Examples:
+
+    [3 1 5 2 0 7]   -> {3 1 0}
+    [5 4 3 2 1]     -> {5 4 3 2 1}
+    [1 2 3]         -> {1}
+    [2 2 1 1]       -> {2 1}
+    []              -> {}

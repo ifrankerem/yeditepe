@@ -1,0 +1,27 @@
+Assignment name  : ex09_remove_not_in
+Expected file    : rendu/ex09_remove_not_in.cpp
+Level            : 4 (lab exam, 20 Oct)
+--------------------------------------------------------------------------------
+
+The class LinkedList is given in include/linked_list.h. Start your file with:
+
+    #include "../include/linked_list.h"
+
+Write this member function:
+
+    int LinkedList::removeNotIn(const int arr[], int size);
+
+It removes every node whose data does NOT appear in arr (arr has size items),
+and returns how many nodes it removed.
+
+- Removed nodes must be freed with delete (the grader checks for leaks).
+- head may change. Keep the order of the nodes that stay.
+- size can be 0: then nothing is "in" arr, so every node is removed.
+- Hint: this is ex02_delete_all with a different "should I delete?" test.
+
+Examples:
+
+    [1 2 3 4 5], arr {2 4}     -> returns 3, list [2 4]
+    [7 7 1],     arr {7}       -> returns 1, list [7 7]
+    [1 2],       arr {1 2 3}   -> returns 0, list [1 2]
+    [1 2],       arr {} (0)    -> returns 2, list []
