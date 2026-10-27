@@ -1,0 +1,25 @@
+Assignment name  : ex11_stack_reverse
+Expected file    : rendu/ex11_stack_reverse.cpp
+Level            : 5 (lab exam 2 guess: stacks and queues)
+--------------------------------------------------------------------------------
+
+The pointer-based Stack class is given in include/stack_queue.h. Start your
+file with:
+
+    #include "../include/stack_queue.h"
+
+Write this member function:
+
+    void Stack::reverse();
+
+It reverses the stack in place: the bottom item becomes the top.
+
+- Do NOT use new or delete: relink the existing nodes (topPtr is the head of a
+  linked list, so this is "reverse a linked list" from Practice Lab 2).
+- Empty stack or one item: nothing changes.
+
+Examples (top is on the left):
+
+    top [3 2 1]   -> top [1 2 3]
+    top [7]       -> top [7]
+    top []        -> top []

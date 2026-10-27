@@ -1,0 +1,28 @@
+Assignment name  : ex17_stack_palindrome
+Expected file    : rendu/ex17_stack_palindrome.cpp
+Level            : 6 (27 October lab: template stack)
+--------------------------------------------------------------------------------
+
+A template Stack is given in include/tstack.h. Start your file with:
+
+    #include "../include/tstack.h"
+
+Write this member function (already declared in the class):
+
+    template <class T>
+    bool Stack<T>::isPalindrome();
+
+It returns true if the stack reads the same from top to bottom and from
+bottom to top.
+
+- Do not touch topPtr: use only push, pop, getTop and isEmpty on this
+  stack (helper Stacks are allowed).
+- When you return, the stack must be exactly as it was (the grader checks).
+- Empty stack or one item: true.
+
+Examples (top is on the left):
+
+    top [1 2 3 2 1]  -> true
+    top [1 2 2 1]    -> true
+    top [1 2 3]      -> false
+    top [r a d a r]  -> true   (Stack<char>)

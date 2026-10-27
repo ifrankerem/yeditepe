@@ -1,0 +1,25 @@
+Assignment name  : ex13_reverse_queue
+Expected file    : rendu
+Level            : 5 (lab exam 2 guess: stacks and queues)
+--------------------------------------------------------------------------------
+
+The Stack and Queue classes are given in include/stack_queue.h. Start your
+file with:
+
+    #include "../include/stack_queue.h"
+
+Write this FREE function (not a member):
+
+    void reverseQueue(Queue& q);
+
+It reverses the order of the items in q.
+
+- You are outside the class: you can only use the public operations
+  (isEmpty, enqueue, dequeue, getFront, push, pop, getTop).
+- Hint: a Stack gives items back in reverse order.
+
+Examples (front is on the left):
+
+    [1 2 3 4]   -> [4 3 2 1]
+    [9]         -> [9]
+    []          -> []

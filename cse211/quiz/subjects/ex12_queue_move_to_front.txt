@@ -1,0 +1,29 @@
+Assignment name  : ex12_queue_move_to_front
+Expected file    : rendu/ex12_queue_move_to_front.cpp
+Level            : 5 (lab exam 2 guess: stacks and queues)
+--------------------------------------------------------------------------------
+
+The pointer-based Queue class is given in include/stack_queue.h. Start your
+file with:
+
+    #include "../include/stack_queue.h"
+
+Write this member function:
+
+    bool Queue::moveToFront(QueueItemType value);
+
+It finds the FIRST node (from the front) holding value and moves that node to
+the front of the queue. Returns true if value was found, false otherwise.
+
+- Do NOT use new or delete: relink the existing node.
+- Careful: if the moved node was the back node, backPtr must change too
+  (the grader enqueues after your call, a wrong backPtr loses items).
+- Already at the front: return true, nothing changes.
+
+Examples (front is on the left):
+
+    [1 2 3 4], value 3   -> true,  [3 1 2 4]
+    [1 2 3 4], value 4   -> true,  [4 1 2 3]   (backPtr is now 3)
+    [5 6 5],   value 5   -> true,  [5 6 5]     (first 5 already at front)
+    [1 2],     value 9   -> false, [1 2]
+    [],        value 1   -> false, []

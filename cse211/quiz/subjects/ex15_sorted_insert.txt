@@ -1,0 +1,27 @@
+Assignment name  : ex15_sorted_insert
+Expected file    : rendu/ex15_sorted_insert.cpp
+Level            : 6 (27 October lab: template stack)
+--------------------------------------------------------------------------------
+
+A template Stack is given in include/tstack.h. Start your file with:
+
+    #include "../include/tstack.h"
+
+Write this member function (already declared in the class):
+
+    template <class T>
+    void Stack<T>::insertSorted(const T& x);
+
+The stack is sorted: the biggest item is on top, the smallest at the bottom.
+Insert x so that the stack stays sorted.
+
+- Do not touch topPtr: use only push, pop, getTop and isEmpty on this
+  stack (a helper Stack is allowed).
+- It must work for any T that has <, not only int.
+
+Examples (top is on the left):
+
+    top [9 8 7 4 3], x 5   -> top [9 8 7 5 4 3]
+    top [9 8 7 4 3], x 10  -> top [10 9 8 7 4 3]
+    top [9 8 7 4 3], x 1   -> top [9 8 7 4 3 1]
+    top [],          x 4   -> top [4]

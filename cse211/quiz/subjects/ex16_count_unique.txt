@@ -1,0 +1,25 @@
+Assignment name  : ex16_count_unique
+Expected file    : rendu/ex16_count_unique.cpp
+Level            : 6 (27 October lab: template stack)
+--------------------------------------------------------------------------------
+
+A template Stack is given in include/tstack.h. Start your file with:
+
+    #include <string>
+    #include "../include/tstack.h"
+
+Write this function:
+
+    int countUnique(const std::string& str);
+
+It returns how many characters appear EXACTLY ONCE in str.
+
+- In the lab you had to solve it with Stack<char> (push, pop, getTop,
+  isEmpty). Try the same: no <map>, <set>, <algorithm>.
+
+Examples:
+
+    "aacxzax"  -> 2      (only c and z appear once)
+    "abc"      -> 3
+    "abcabc"   -> 0
+    ""         -> 0

@@ -1,0 +1,20 @@
+# Loaded by ./grade.sh exNN gdb
+set debuginfod enabled off
+set print pretty on
+
+# pstack            print this stack (inside a member function), top first
+# pstack <stack>    print any stack variable, e.g. pstack tmp
+define pstack
+  if $argc == 0
+    set $n = topPtr
+  else
+    set $n = $arg0.topPtr
+  end
+  printf "top ["
+  while $n != 0
+    output $n->item
+    printf " "
+    set $n = $n->next
+  end
+  printf "]\n"
+end

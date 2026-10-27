@@ -1,0 +1,28 @@
+Assignment name  : ex14_queue_remove_all
+Expected file    : rendu/ex14_queue_remove_all.cpp
+Level            : 5 (lab exam 2 guess: stacks and queues)
+--------------------------------------------------------------------------------
+
+The pointer-based Queue class is given in include/stack_queue.h. Start your
+file with:
+
+    #include "../include/stack_queue.h"
+
+Write this member function:
+
+    int Queue::removeAll(QueueItemType value);
+
+It removes every node holding value and returns how many it removed.
+
+- Removed nodes must be freed with delete (the grader checks for leaks).
+- Keep the order of the items that stay.
+- frontPtr AND backPtr must stay correct: removing the back node moves backPtr,
+  removing everything makes both nullptr (the grader enqueues after your call).
+- Hint: this is ex02_delete_all, plus the backPtr special case from the slides.
+
+Examples (front is on the left):
+
+    [1 2 1 3], value 1   -> returns 2, [2 3]
+    [1 2 3],   value 3   -> returns 1, [1 2]     (backPtr is now 2)
+    [4 4 4],   value 4   -> returns 3, []
+    [1 2],     value 9   -> returns 0, [1 2]

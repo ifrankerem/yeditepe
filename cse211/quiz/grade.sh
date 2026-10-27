@@ -17,6 +17,13 @@ EXERCISES=(
     ex08_insert_after_max
     ex09_remove_not_in
     ex10_new_minimums
+    ex11_stack_reverse
+    ex12_queue_move_to_front
+    ex13_reverse_queue
+    ex14_queue_remove_all
+    ex15_sorted_insert
+    ex16_count_unique
+    ex17_stack_palindrome
 )
 FORBIDDEN='#include *<(stack|queue|list|forward_list|vector|deque|array|algorithm|set|map)>'
 
@@ -40,7 +47,7 @@ grade() {
         rm -f "$bin" "$bin.log"; return 1
     fi
     if [ "$2" = gdb ]; then
-        gdb -q "$bin"; rm -f "$bin" "$bin.log"; return 0
+        gdb -q -x tests/gdbinit "$bin"; rm -f "$bin" "$bin.log"; return 0
     fi
 
     local run=()
